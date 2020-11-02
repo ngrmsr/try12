@@ -1,0 +1,33 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<div class="row">
+    <div class="col-lg-5">
+       @*@Html.Partial("ADS",Model.advertise)*@
+        @await Component.InvokeAsync("Ads")
+    </div>
+    <div class="col-lg-4">
+        Menu
+    </div>
+    <div class="">
+        @Html.Partial("_Category", Model.Categories)
+    </div>
+</div>
+
+@*@functions{
+    public string Print1 => "hi"
+}
+
+@Print1()*@
+@Print()
+@*@section sideBar{
+<ul>
+    <li>Menu privacy1</li>
+    <li>Menu privacy2</li>
+</ul>
+}*@

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApplication1.Models.CategoryViewModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="p-5">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td >
+                <div class=" text-center bg-success rounded-circle" style="padding:10px">
+                    @Html.DisplayFor(modelItem => item.Count)
+                </div>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
